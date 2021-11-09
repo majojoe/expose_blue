@@ -1,0 +1,12 @@
+ #!/bin/bash
+
+SDDM_CONF_FILE="/etc/sddm.conf" 
+ 
+#install the input method to suppress the virtual keyboard for normal computers
+if [ -f "${SDDM_CONF_FILE}" ]; then
+        if grep -q "^[#]*[[:space:]]*InputMethod=" "${SDDM_CONF_FILE}"; then
+                sed -i "s/^[#]*[[:space:]]*InputMethod=.*/InputMethod=/g" "${SDDM_CONF_FILE}"
+        else
+                echo "InputMethod=" >> "${SDDM_CONF_FILE}"
+        fi
+fi
