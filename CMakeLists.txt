@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 2.8.11)
+
+project(ExposeBlue)
+
+install(DIRECTORY ExposeBlue DESTINATION /usr/share/sddm/themes  )
+set(CPACK_PACKAGE_NAME "expose-blue")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "sddm theme expose blue that provides a login theme that works well with users that are provided by AD servers.")
+set(CPACK_PACKAGE_VERSION "1.0.1")
+set(SYSTEM_ARCH "all")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "sddm")
+set(CPACK_GENERATOR "DEB")
+set(PACKAGE_OS "linux")
+set(CPACK_SYSTEM_NAME "${PACKAGE_OS}-amd64")
+set(SYSTEM_ARCH "amd64")
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Johannes Maier <maier_jo@gmx.de>")
+
+include(CPack)
+
+
